@@ -4,12 +4,12 @@ import { Cpu, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-secondary text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src="/src/assets/ion-logo.jpeg" alt="Ion Semiconductors Logo" className="h-12 w-25" />
+              <img src="/images/ion-logo.png" alt="Ion Semiconductors Logo" className="h-12 w-25" />
             </div>
             <p className="text-gray-400 mb-4">
               Empowering the next generation of semiconductor professionals with industry-aligned training and hands-on experience.

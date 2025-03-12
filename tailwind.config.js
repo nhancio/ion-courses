@@ -7,8 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#f2dfce',
-        secondary: '#fff1e5',
+        primary: '#0d47a1', // Dark blue
+        secondary: '#e0f2f7', // Light blue
+        neutral: '#f9fafb', // White
+        dark: '#1e293b', // Dark gray/black
       },
       fontFamily: {
         serif: ['Crimson Text', 'serif'],

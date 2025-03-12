@@ -145,7 +145,7 @@ const Navbar: React.FC = () => {
             className="flex items-center cursor-pointer"
             onClick={handleLogoClick}
           >
-            <img src="/src/assets/ion-logo.jpeg" alt="Ion Semiconductors Logo" className="h-12 w-50" />
+            <img src="/images/ion-logo.png" alt="Ion Semiconductors Logo" className="h-12 w-50" />
           </div>
           
           {/* Desktop Navigation */}
