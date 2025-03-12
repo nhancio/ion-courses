@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Cpu, Code, Wrench, Clock, Layout, Layers, Zap, 
-  Briefcase, Shield, ChevronDown, ChevronUp 
+  Briefcase, Shield 
 } from 'lucide-react';
 
 const roleBasedCourses = [
@@ -64,12 +64,6 @@ const Courses: React.FC = () => {
     threshold: 0.1,
   });
   
-  const [expandedAccordion, setExpandedAccordion] = useState<number | null>(null);
-  
-  const toggleAccordion = (index: number) => {
-    setExpandedAccordion(expandedAccordion === index ? null : index);
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -120,11 +114,13 @@ const Courses: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between"
             >
-              <div className="text-blue-600 mb-4">{course.icon}</div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h4>
-              <p className="text-gray-600">Comprehensive training for {course.title.toLowerCase()} roles in the semiconductor industry.</p>
+              <div>
+                <div className="text-blue-600 mb-4">{course.icon}</div>
+                <h4 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h4>
+                <p className="text-gray-600">Comprehensive training for {course.title.toLowerCase()} roles in the semiconductor industry.</p>
+              </div>
               {course.roadmapUrl ? (
                 <a 
                   href={course.roadmapUrl}
@@ -155,10 +151,12 @@ const Courses: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-100"
+              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-100 flex flex-col justify-between"
             >
-              <h4 className="text-xl font-semibold text-gray-800 mb-3">{course.title}</h4>
-              <p className="text-gray-600">{course.description}</p>
+              <div>
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">{course.title}</h4>
+                <p className="text-gray-600">{course.description}</p>
+              </div>
               <button className="mt-4 text-blue-600 font-medium hover:text-blue-800 transition-colors">
                 Explore course →
               </button>
@@ -178,11 +176,13 @@ const Courses: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between"
             >
-              <div className="text-blue-600 mb-4">{course.icon}</div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h4>
-              <p className="text-gray-600">{course.content}</p>
+              <div>
+                <div className="text-blue-600 mb-4">{course.icon}</div>
+                <h4 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h4>
+                <p className="text-gray-600">{course.content}</p>
+              </div>
               <button className="mt-4 text-blue-600 font-medium hover:text-blue-800 transition-colors">
                 Learn more →
               </button>

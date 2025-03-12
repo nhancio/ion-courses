@@ -6,19 +6,19 @@ import { Link } from 'react-scroll';
 const slides = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+    image: '/images/carousel/carousel1.avif',
     title: 'Leading VLSI Training Institute',
     subtitle: 'Empowering the next generation of semiconductor professionals'
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+    image: '/images/carousel/carousel2.avif',
     title: 'Industry-Aligned Curriculum',
     subtitle: 'Bridging the gap between academia and industry requirements'
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1563770660941-10a63607692e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+    image: '/images/carousel/carousel3.avif',
     title: 'Hands-on Training',
     subtitle: 'Real-world projects and practical experience'
   }
