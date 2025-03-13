@@ -1,194 +1,240 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { 
-  Cpu, Code, Wrench, Clock, Layout, Layers, Zap, 
-  Briefcase, Shield 
-} from 'lucide-react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./CardCarousel.css"; // Custom styles
 
 const roleBasedCourses = [
-  { title: 'RTL Design Engineer', icon: <Cpu className="h-10 w-10" /> },
-  { 
-    title: 'Verification Engineer', 
-    icon: <Code className="h-10 w-10" />,
-    roadmapUrl: 'https://roadmap.sh/r/verification'
+  {
+    title: 'RTL Design Engineer',
+    description: 'Comprehensive training for RTL Design Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (1).avif',
+    buttonText: 'Learn more →'
   },
-  { title: 'DFT Engineer', icon: <Wrench className="h-10 w-10" /> },
-  { title: 'Synthesis and STA Engineer', icon: <Clock className="h-10 w-10" /> },
-  { title: 'PD Engineer', icon: <Layout className="h-10 w-10" /> },
-  { title: 'PV Engineer', icon: <Layers className="h-10 w-10" /> },
-  { title: 'Analog Design Engineer', icon: <Zap className="h-10 w-10" /> },
-  { title: 'Architect', icon: <Briefcase className="h-10 w-10" /> },
-  { title: 'Safety and Security HW Engineer', icon: <Shield className="h-10 w-10" /> },
+  {
+    title: 'Verification Engineer',
+    description: 'Comprehensive training for Verification Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (2).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'DFT Engineer',
+    description: 'Comprehensive training for DFT Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (3).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'Synthesis and STA Engineer',
+    description: 'Comprehensive training for Synthesis and STA Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (4).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'PD Engineer',
+    description: 'Comprehensive training for PD Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (5).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'PV Engineer',
+    description: 'Comprehensive training for PV Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (6).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'Analog Design Engineer',
+    description: 'Comprehensive training for Analog Design Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (7).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'Architect',
+    description: 'Comprehensive training for Architect roles in the semiconductor industry.',
+    image: '/images/course-cards/course (8).avif',
+    buttonText: 'Learn more →'
+  },
+  {
+    title: 'Safety and Security HW Engineer',
+    description: 'Comprehensive training for Safety and Security HW Engineer roles in the semiconductor industry.',
+    image: '/images/course-cards/course (9).avif',
+    buttonText: 'Learn more →'
+  }
 ];
 
 const languageCourses = [
-  { title: 'Verilog for Design', description: 'Master hardware description language for digital circuit design' },
-  { title: 'SystemVerilog for Verification', description: 'Learn advanced verification techniques with SystemVerilog' },
-  { title: 'SV-UVM for Verification', description: 'Universal Verification Methodology with SystemVerilog' },
-  { title: 'SystemC for Modeling', description: 'C++ library for system-level modeling and simulation' },
-  { title: 'Python for Flow Automation', description: 'Automate VLSI design flows with Python scripting' },
+  {
+    title: 'Verilog for Design',
+    description: 'Master hardware description language for digital circuit design.',
+    image: '/images/course-cards/course (10).avif',
+    buttonText: 'Explore course →'
+  },
+  {
+    title: 'SystemVerilog for Verification',
+    description: 'Learn advanced verification techniques with SystemVerilog.',
+    image: '/images/course-cards/course (1).avif',
+    buttonText: 'Explore course →'
+  },
+  {
+    title: 'SV-UVM for Verification',
+    description: 'Universal Verification Methodology with SystemVerilog.',
+    image: '/images/course-cards/course (2).avif',
+    buttonText: 'Explore course →'
+  },
+  {
+    title: 'SystemC for Modeling',
+    description: 'C++ library for system-level modeling and simulation.',
+    image: '/images/course-cards/course (3).avif',
+    buttonText: 'Explore course →'
+  },
+  {
+    title: 'Python for Flow Automation',
+    description: 'Automate VLSI design flows with Python scripting.',
+    image: '/images/course-cards/course (4).avif',
+    buttonText: 'Explore course →'
+  }
 ];
 
 const protocolCourses = [
-  { 
-    title: 'AMBA AXI4', 
-    content: 'Advanced eXtensible Interface 4 protocol for high-performance, high-frequency system designs with separate address/control and data phases.',
-    icon: <Cpu className="h-10 w-10" />
+  {
+    title: 'AMBA AXI4',
+    description: 'Advanced eXtensible Interface 4 protocol for high-performance, high-frequency system designs.',
+    image: '/images/course-cards/course (5).avif',
+    buttonText: 'Learn more →'
   },
-  { 
-    title: 'UART, SPI, I2C', 
-    content: 'Essential communication protocols for embedded systems: Universal Asynchronous Receiver/Transmitter, Serial Peripheral Interface, and Inter-Integrated Circuit.',
-    icon: <Cpu className="h-10 w-10" />
+  {
+    title: 'UART, SPI, I2C',
+    description: 'Essential communication protocols for embedded systems.',
+    image: '/images/course-cards/course (6).avif',
+    buttonText: 'Learn more →'
   },
-  { 
-    title: 'PCIe Gen5', 
-    content: 'PCI Express Generation 5.0 with 32GT/s data transfer rates, used for high-speed connectivity in computing platforms.',
-    icon: <Cpu className="h-10 w-10" />
+  {
+    title: 'PCIe Gen5',
+    description: 'PCI Express Generation 5.0 with 32GT/s data transfer rates.',
+    image: '/images/course-cards/course (7).avif',
+    buttonText: 'Learn more →'
   },
-  { 
-    title: 'CxL 2.0', 
-    content: 'Compute Express Link 2.0, an open industry standard for high-speed CPU-to-device and CPU-to-memory connections.',
-    icon: <Cpu className="h-10 w-10" />
+  {
+    title: 'CxL 2.0',
+    description: 'Compute Express Link 2.0, an open industry standard for high-speed CPU-to-device and CPU-to-memory connections.',
+    image: '/images/course-cards/course (8).avif',
+    buttonText: 'Learn more →'
   },
-  { 
-    title: 'Automotive Protocols (CAN, LIN, FLEXRAY)', 
-    content: 'Specialized communication protocols for automotive applications: Controller Area Network, Local Interconnect Network, and FlexRay for safety-critical systems.',
-    icon: <Cpu className="h-10 w-10" />
-  },
+  {
+    title: 'Automotive Protocols (CAN, LIN, FLEXRAY)',
+    description: 'Specialized communication protocols for automotive applications.',
+    image: '/images/course-cards/course (9).avif',
+    buttonText: 'Learn more →'
+  }
 ];
 
 const Courses: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        className="text-center mb-12"
-      >
-        <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Our Courses
-        </motion.h2>
-        <motion.div variants={itemVariants} className="w-20 h-1 bg-blue-600 mx-auto mb-6"></motion.div>
-        <motion.p variants={itemVariants} className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Comprehensive training programs designed to prepare you for a successful career in the semiconductor industry
-        </motion.p>
-      </motion.div>
-
-      {/* Role-based Courses Section */}
+    <div className="container mx-auto px-4 py-10">
       <section id="role-based-courses" className="pt-16">
-        <motion.h3 variants={itemVariants} className="text-2xl font-bold text-gray-800 mb-8 text-center">
-          Role-Based Courses
-        </motion.h3>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Role-Based Courses</h3>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={10}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true, el: '.swiper-pagination' }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
           {roleBasedCourses.map((course, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between"
-            >
-              <div>
-                <div className="text-blue-600 mb-4">{course.icon}</div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h4>
-                <p className="text-gray-600">Comprehensive training for {course.title.toLowerCase()} roles in the semiconductor industry.</p>
+            <SwiperSlide key={index}>
+              <div className="relative bg-black text-white rounded-lg overflow-hidden shadow-lg" style={{ height: '25rem' }}>
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black to-transparent">
+                  <h3 className="text-lg font-semibold">{course.title}</h3>
+                  <p className="text-sm opacity-80 my-2">{course.description}</p>
+                  <button className="mt-2 px-4 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition">
+                    {course.buttonText}
+                  </button>
+                </div>
               </div>
-              {course.roadmapUrl ? (
-                <a 
-                  href={course.roadmapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block text-blue-600 font-medium hover:text-blue-800 transition-colors"
-                >
-                  View Roadmap →
-                </a>
-              ) : (
-                <button className="mt-4 text-blue-600 font-medium hover:text-blue-800 transition-colors">
-                  Learn more →
-                </button>
-              )}
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
 
-      {/* Language Courses Section */}
       <section id="language-courses" className="pt-16">
-        <motion.h3 variants={itemVariants} className="text-2xl font-bold text-gray-800 mb-8 text-center">
-          Language Courses
-        </motion.h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Language Courses</h3>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={10}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true, el: '.swiper-pagination' }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
           {languageCourses.map((course, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-100 flex flex-col justify-between"
-            >
-              <div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">{course.title}</h4>
-                <p className="text-gray-600">{course.description}</p>
+            <SwiperSlide key={index}>
+              <div className="relative bg-black text-white rounded-lg overflow-hidden shadow-lg" style={{ height: '25rem' }}>
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black to-transparent">
+                  <h3 className="text-lg font-semibold">{course.title}</h3>
+                  <p className="text-sm opacity-80 my-2">{course.description}</p>
+                  <button className="mt-2 px-4 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition">
+                    {course.buttonText}
+                  </button>
+                </div>
               </div>
-              <button className="mt-4 text-blue-600 font-medium hover:text-blue-800 transition-colors">
-                Explore course →
-              </button>
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
 
-      {/* Protocol Courses Section */}
       <section id="protocol-courses" className="pt-16">
-        <motion.h3 variants={itemVariants} className="text-2xl font-bold text-gray-800 mb-8 text-center">
-          Protocol Courses
-        </motion.h3>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Protocol Courses</h3>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={10}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true, el: '.swiper-pagination' }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
           {protocolCourses.map((course, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between"
-            >
-              <div>
-                <div className="text-blue-600 mb-4">{course.icon}</div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h4>
-                <p className="text-gray-600">{course.content}</p>
+            <SwiperSlide key={index}>
+              <div className="relative bg-black text-white rounded-lg overflow-hidden shadow-lg" style={{ height: '25rem' }}>
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black to-transparent">
+                  <h3 className="text-lg font-semibold">{course.title}</h3>
+                  <p className="text-sm opacity-80 my-2">{course.description}</p>
+                  <button className="mt-2 px-4 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition">
+                    {course.buttonText}
+                  </button>
+                </div>
               </div>
-              <button className="mt-4 text-blue-600 font-medium hover:text-blue-800 transition-colors">
-                Learn more →
-              </button>
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
     </div>
   );
