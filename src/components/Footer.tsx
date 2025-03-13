@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src="/images/ion-logo.png" alt="Ion Semiconductors Logo" className="h-12 w-25" />
+              <img src="/images/tejas-logo.png" alt="Tejas Academy Logo" className="h-12 w-25" />
             </div>
             <p className="text-gray-400 mb-4">
               Empowering the next generation of semiconductor professionals with industry-aligned training and hands-on experience.
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Ion Semiconductors. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Tejas Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -53,7 +53,7 @@ const About: React.FC = () => {
           className="space-y-6"
         >
           <motion.p variants={itemVariants} className="text-lg text-gray-700 leading-relaxed">
-            <span className="font-semibold text-blue-600">Ion Semiconductors</span> was founded with the mission of empowering enthusiastic freshers by aligning their skills with industry needs. As a leader in VLSI frontend and backend training, we have over three years of proven expertise in this field.
+            <span className="font-semibold text-blue-600">Tejas Academy</span> was founded with the mission of empowering enthusiastic freshers by aligning their skills with industry needs. As a leader in VLSI frontend and backend training, we have over three years of proven expertise in this field.
           </motion.p>
           <motion.p variants={itemVariants} className="text-lg text-gray-700 leading-relaxed">
             Our comprehensive training programs are designed to bridge the gap between academic knowledge and industry requirements, ensuring our students are job-ready upon completion.

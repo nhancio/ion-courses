@@ -26,12 +26,12 @@ const clients = [
   {
     id: 5,
     image: '/images/successstories/5.jpeg',
-    testimonial: 'Multiple pre-tests and mock interviews helped me a lot to crack the interviews. DFT design experts at Ion Semiconductors gave me the practical skills I needed to land my dream job at top most client in industry.'
+    testimonial: 'Multiple pre-tests and mock interviews helped me a lot to crack the interviews. DFT design experts at Tejas Academy gave me the practical skills I needed to land my dream job at top most client in industry.'
   },
   {
     id: 6,
     image: '/images/successstories/6.jpeg',
-    testimonial: 'The DFT at Ion Semiconductors is top-notch. I learned industry-standard tools and methodologies. In short Ion Semi is a good stage to gain knowledge and prepare for your career.'
+    testimonial: 'The DFT at Tejas Academy is top-notch. I learned industry-standard tools and methodologies. In short Ion Semi is a good stage to gain knowledge and prepare for your career.'
   },
   {
     id: 7,
