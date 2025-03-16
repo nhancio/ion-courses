@@ -6,7 +6,7 @@ const ArchitectRoadmap: React.FC = () => {
       <iframe 
         src="https://roadmap.sh/r/embed?id=67c3eed8580201fc77bdb4ed" 
         width="100%" 
-        height="500px" 
+        height="600px" 
         frameBorder="0"
         title="Architect Roadmap"
         className="mt-12 mb-8" // Adjusted margin-top and added margin-bottom
