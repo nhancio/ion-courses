@@ -1,0 +1,17 @@
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+.swiper-pagination-bullet {
+  background: cyan;
+}
+
+.swiper-pagination-bullet-active {
+  background: black
+#00ffff;
+}
+
+.swiper-pagination {
+  bottom: -20px; /* Move the pagination bullets further down */
+}
