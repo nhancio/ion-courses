@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
             className="flex items-center cursor-pointer"
             onClick={handleLogoClick}
           >
-            <img src="/images/tejas-logo.png" alt="Tejas Academy Logo" className="h-12 w-50" />
+            <img src="/images/logo2.png" alt="Tejas Academy Logo" className="h-12 w-50" />
           </div>
           
           {/* Desktop Navigation */}
