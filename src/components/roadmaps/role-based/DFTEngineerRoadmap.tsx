@@ -9,7 +9,7 @@ const DFTEngineerRoadmap: React.FC = () => {
         height="100%" 
         frameBorder="0"
         title="DFT Engineer Roadmap"
-        className="mt-12 mb-8 overflow-auto" // Adjusted margin-top and added margin-bottom
+        className="mt-12 mb-8 overflow-auto"
       ></iframe>
     </div>
   );
