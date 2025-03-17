@@ -115,7 +115,7 @@ const protocolCourses = [
   {
     title: 'AMBA AXI4',
     description: 'Advanced eXtensible Interface 4 protocol for high-performance, high-frequency system designs.',
-    image: '/images/course-cards/course (5).avif',
+    image: '/images/course-cards/course (7).avif',
     buttonText: 'Learn more →',
     link: '/amba-axi4-roadmap'
   },
@@ -129,7 +129,7 @@ const protocolCourses = [
   {
     title: 'PCIe Gen5',
     description: 'PCI Express Generation 5.0 with 32GT/s data transfer rates.',
-    image: '/images/course-cards/course (7).avif',
+    image: '/images/course-cards/course (5).avif',
     buttonText: 'Learn more →',
     link: '/pcie-gen5-roadmap'
   },

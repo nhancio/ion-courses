@@ -22,11 +22,24 @@ const Contact: React.FC = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    // Here you would typically send the form data to your backend
-    alert('Form submitted successfully!');
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch('/.netlify/functions/sendEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert('Form submitted successfully!');
+        reset();
+      } else {
+        alert('Failed to send email. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   const containerVariants = {
@@ -80,7 +93,7 @@ const Contact: React.FC = () => {
               <Clock className="h-6 w-6 text-blue-600" />
             </div>
             <div className="ml-4">
-              <h3 className="text-lg font-medium text-gray-900">Walk-in Inquiry Hours</h3>
+              <h3 className="text-lg font-medium text-gray-900">Online Inquiry Hours</h3>
               <p className="mt-1 text-gray-600">7 days a week (09:30 AM - 06:00 PM)</p>
             </div>
           </motion.div>

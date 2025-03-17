@@ -96,7 +96,7 @@ const Clients: React.FC = () => {
         </motion.h2>
         <motion.div variants={itemVariants} className="w-20 h-1 bg-blue-600 mx-auto mb-6"></motion.div>
         <motion.p variants={itemVariants} className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Our graduates are working at top semiconductor companies around the world
+          Our graduates are working at top semiconductor companies around the world !
         </motion.p>
       </motion.div>
 

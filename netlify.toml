@@ -2,6 +2,7 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  functions = "functions" # Add this line
 
 [[redirects]]
   from = "/*"

@@ -30,6 +30,7 @@ const navItems = [
     type: 'dropdown',
     items: courseItems
   },
+  { name: 'Success Stories', to: 'clients', type: 'scroll' }, // Added this line
   { name: 'Contact Us', to: 'contact', type: 'scroll' },
 ];
 
