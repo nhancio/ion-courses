@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch('/.netlify/functions/sendEmail', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyRb4L65CT19pgQQvIZojGe__a9eFVFYO-GceR2eAmDXWxNbprpJ_fNlDI83MlWum9nAA/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
         alert('Form submitted successfully!');
         reset();
       } else {
-        alert('Failed to send email. Please try again later.');
+        alert('Failed to submit form. Please try again later.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
