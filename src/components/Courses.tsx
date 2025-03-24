@@ -70,6 +70,13 @@ const roleBasedCourses = [
     image: '/images/course-cards/course (9).avif',
     buttonText: 'Learn more →',
     link: '/safety-and-security-hw-engineer-roadmap'
+  },
+  {
+    title: 'FPGA System Design',
+    description: 'Comprehensive training for FPGA System Design roles in the semiconductor industry.',
+    image: '/images/course-cards/course (10).avif',
+    buttonText: 'Learn more →',
+    link: '/fpga-system-design-roadmap'
   }
 ];
 

@@ -20,6 +20,7 @@ import PVEngineerRoadmap from './components/roadmaps/role-based/PVEngineerRoadma
 import AnalogDesignEngineerRoadmap from './components/roadmaps/role-based/AnalogDesignEngineerRoadmap';
 import ArchitectRoadmap from './components/roadmaps/role-based/ArchitectRoadmap';
 import SafetyAndSecurityHWEngineerRoadmap from './components/roadmaps/role-based/SafetyAndSecurityHWEngineerRoadmap';
+import FPGASystemDesignRoadmap from './components/roadmaps/role-based/FPGASystemDesignRoadmap';
 import VerilogForDesignRoadmap from './components/roadmaps/language/VerilogForDesignRoadmap';
 import SystemVerilogForVerificationRoadmap from './components/roadmaps/language/SystemVerilogForVerificationRoadmap';
 import SVUVMForVerificationRoadmap from './components/roadmaps/language/SVUVMForVerificationRoadmap';
@@ -48,6 +49,7 @@ function App() {
           <Route path="/analog-design-engineer-roadmap" element={<AnalogDesignEngineerRoadmap />} />
           <Route path="/architect-roadmap" element={<ArchitectRoadmap />} />
           <Route path="/safety-and-security-hw-engineer-roadmap" element={<SafetyAndSecurityHWEngineerRoadmap />} />
+          <Route path="/fpga-system-design-roadmap" element={<FPGASystemDesignRoadmap />} />
           <Route path="/verilog-for-design-roadmap" element={<VerilogForDesignRoadmap />} />
           <Route path="/systemverilog-for-verification-roadmap" element={<SystemVerilogForVerificationRoadmap />} />
           <Route path="/sv-uvm-for-verification-roadmap" element={<SVUVMForVerificationRoadmap />} />
