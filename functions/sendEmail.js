@@ -14,8 +14,8 @@ exports.handler = async (event) => {
     const { firstName, lastName, email, phone, education, passingYear, message } = JSON.parse(event.body);
 
     const msg = {
-      to: 'your-email@example.com', // Replace with your email
-      from: 'no-reply@tejas-academy.com', // Replace with a verified sender email
+      to: 'nithindidigam@gmail.com', // Updated email address
+      from: 'nithindidigam@gmail.com', // Replace with a verified sender email
       subject: 'New Contact Form Submission',
       text: `
         You have a new contact form submission:
