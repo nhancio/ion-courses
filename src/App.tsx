@@ -40,6 +40,15 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<MainContent />} />
+          <Route path="/home" element={<MainContent />} />
+          <Route path="/aboutus" element={<About />} />
+          <Route path="/ourcourses" element={<Courses />} />
+          <Route path="/ourcourses/role" element={<Courses />} />
+          <Route path="/ourcourses/language" element={<Courses />} />
+          <Route path="/ourcourses/protocol" element={<Courses />} />
+          <Route path="/successstories" element={<Clients />} />
+          <Route path="/contactus" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/rtl-design-engineer-roadmap" element={<RTLDesignEngineerRoadmap />} />
           <Route path="/verification-engineer-roadmap" element={<VerificationEngineerRoadmap />} />
           <Route path="/dft-engineer-roadmap" element={<DFTEngineerRoadmap />} />
@@ -61,6 +70,7 @@ function App() {
           <Route path="/cxl2-roadmap" element={<CxL2Roadmap />} />
           <Route path="/automotive-protocols-roadmap" element={<AutomotiveProtocolsRoadmap />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
