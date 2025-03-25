@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
         </motion.h2>
         <motion.div variants={itemVariants} className="w-20 h-1 bg-blue-600 mx-auto mb-6"></motion.div>
         <motion.p variants={itemVariants} className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Get in touch with us for more information about our courses and services
+          Get in touch with us for more information about our courses
         </motion.p>
       </motion.div>
 
