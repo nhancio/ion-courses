@@ -1,44 +1,39 @@
-const sgMail = require('@sendgrid/mail');
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const ContactForm = () => {
+  const form = useRef();
 
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method not allowed' }),
-    };
-  }
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevent page reload
 
-  try {
-    const { firstName, lastName, email, phone, education, passingYear, message } = JSON.parse(event.body);
+    emailjs.sendForm(
+      'service_ddln76k',   // Replace with actual Service ID
+      'templateID',  // Replace with actual Template ID
+      form.current, 
+      'oOpZk3sV84hCJlK_l'    // Replace with actual Public Key
+    ).then(
+      (result) => {
+        console.log('Email sent successfully:', result.text);
+        alert('Message sent successfully!');
+      },
+      (error) => {
+        console.error('Email sending failed:', error.text);
+        alert('Failed to send message.');
+      }
+    );
 
-    const msg = {
-      to: 'info@tejas-academy.com', // Updated email address
-      from: 'no-reply@tejas-academy.com', // Replace with a verified sender email
-      subject: 'New Contact Form Submission',
-      text: `
-        You have a new contact form submission:
-        Name: ${firstName} ${lastName}
-        Email: ${email}
-        Phone: ${phone}
-        Education: ${education}
-        Passing Year: ${passingYear}
-        Message: ${message}
-      `,
-    };
+    e.target.reset(); // Reset form after submission
+  };
 
-    await sgMail.send(msg);
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Email sent successfully!' }),
-    };
-  } catch (error) {
-    console.error('Error sending email:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to send email' }),
-    };
-  }
+  return (
+    <form ref={form} onSubmit={sendEmail} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required />
+      <button type="submit">Send</button>
+    </form>
+  );
 };
+
+export default ContactForm;
