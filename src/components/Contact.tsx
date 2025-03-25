@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
       };
 
       const result = await emailjs.send(
-        'service_ddln76k', // Replace with your actual Service ID
+        'service_k7o7hfo', // Replace with your actual Service ID
         'template_18emrtv', // Replace with your actual Template ID
         templateParams,
         'BpSpEbJh6niVNOLIN' // Replace with your actual Public Key

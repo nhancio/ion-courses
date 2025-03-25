@@ -8,7 +8,7 @@ const ContactForm = () => {
     e.preventDefault(); // Prevent page reload
 
     emailjs.sendForm(
-      'service_ddln76k',   // Replace with actual Service ID
+      'service_k7o7hfo',   // Replace with actual Service ID
       'template_18emrtv',  // Replace with actual Template ID
       form.current, 
       'oOpZk3sV84hCJlK_l'    // Replace with actual Public Key
