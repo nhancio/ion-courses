@@ -24,6 +24,7 @@ const courseItems = [
 const navItems = [
   { name: 'Home', to: 'home', type: 'scroll' },
   { name: 'About Us', to: 'about', type: 'scroll' },
+  { name: 'Why Tejas?', to: 'why-tejas', type: 'scroll' }, // Added this line
   { 
     name: 'Our Courses', 
     to: 'courses', 
