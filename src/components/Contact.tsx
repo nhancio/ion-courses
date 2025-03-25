@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
-import { Clock, Phone, Mail } from 'lucide-react';
+import { Clock, Phone, Mail, MessageCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 type FormData = {
@@ -127,7 +127,26 @@ const Contact: React.FC = () => {
             </div>
             <div className="ml-4">
               <h3 className="text-lg font-medium text-gray-900">Email</h3>
-              <p className="mt-1 text-gray-600">info@tejas-academy.com</p>
+              <a href="mailto:info@tejas-academy.com" className="mt-1 text-gray-600 hover:text-blue-600">
+                info@tejas-academy.com
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="flex items-start">
+            <div className="flex-shrink-0">
+              <MessageCircle className="h-6 w-6 text-blue-600" />
+            </div>
+            <div className="ml-4">
+              <h3 className="text-lg font-medium text-gray-900">WhatsApp</h3>
+              <a 
+                href="https://api.whatsapp.com/send?phone=919346152382&text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20courses"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-gray-600 hover:text-blue-600 flex items-center gap-2"
+              >
+                Chat with us
+              </a>
             </div>
           </motion.div>
         </motion.div>

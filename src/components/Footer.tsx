@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { Cpu, Mail, Phone, MapPin } from 'lucide-react';
+import { Cpu, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'; // Add MessageCircle icon
 
 const Footer: React.FC = () => {
   return (
@@ -79,7 +79,11 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-blue-400 mr-2 mt-1" />
-                <span className="text-black">info@tejas-academy.com</span>
+                <a href="mailto:info@tejas-academy.com" className="text-black">info@tejas-academy.com</a>
+              </li>
+              <li className="flex items-start">
+                <MessageCircle className="h-5 w-5 text-blue-400 mr-2 mt-1" />
+                <a href="https://api.whatsapp.com/send?phone=919346152382&text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20courses" target="_blank" rel="noopener noreferrer" className="text-black">WhatsApp</a>
               </li>
             </ul>
           </div>

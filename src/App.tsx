@@ -30,6 +30,8 @@ import UARTSPICANRoadmap from './components/roadmaps/protocol/UARTSPICANRoadmap'
 import PCIeGen5Roadmap from './components/roadmaps/protocol/PCIeGen5Roadmap';
 import CxL2Roadmap from './components/roadmaps/protocol/CxL2Roadmap';
 import AutomotiveProtocolsRoadmap from './components/roadmaps/protocol/AutomotiveProtocolsRoadmap';
+import Blogs from './pages/Blogs';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
