@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
 import { Clock, Phone, Mail } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 type FormData = {
   firstName: string;
@@ -24,17 +25,29 @@ const Contact: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyRb4L65CT19pgQQvIZojGe__a9eFVFYO-GceR2eAmDXWxNbprpJ_fNlDI83MlWum9nAA/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const templateParams = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        education: data.education,
+        passingYear: data.passingYear,
+        message: data.message,
+      };
 
-      if (response.ok) {
+      const result = await emailjs.send(
+        'service_ddln76k', // Replace with your actual Service ID
+        'template_18emrtv', // Replace with your actual Template ID
+        templateParams,
+        'BpSpEbJh6niVNOLIN' // Replace with your actual Public Key
+      );
+
+      if (result.text === 'OK') {
         alert('Form submitted successfully!');
         reset();
       } else {
-        alert('Failed to submit form. Please try again later.');
+        console.error('Email sending failed:', result);
+        alert('Failed to send email. Please try again later.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
