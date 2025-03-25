@@ -7,7 +7,6 @@ import Courses from './components/Courses';
 import Services from './components/Services';
 import Clients from './components/Clients';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 // import TawkToChat from './components/TawkToChat'; // Commented out
 import Login from './components/Login';
 import MainContent from './components/MainContent';
@@ -70,7 +69,6 @@ function App() {
           <Route path="/cxl2-roadmap" element={<CxL2Roadmap />} />
           <Route path="/automotive-protocols-roadmap" element={<AutomotiveProtocolsRoadmap />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
