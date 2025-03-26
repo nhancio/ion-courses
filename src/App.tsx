@@ -70,6 +70,8 @@ function App() {
           <Route path="/pcie-gen5-roadmap" element={<PCIeGen5Roadmap />} />
           <Route path="/cxl2-roadmap" element={<CxL2Roadmap />} />
           <Route path="/automotive-protocols-roadmap" element={<AutomotiveProtocolsRoadmap />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogPost />} />
         </Routes>
       </div>
     </Router>

@@ -33,6 +33,7 @@ const navItems = [
   },
   { name: 'Success Stories', to: 'clients', type: 'scroll' }, // Added this line
   { name: 'Contact Us', to: 'contact', type: 'scroll' },
+  { name: 'Blogs', to: '/blogs', type: 'route' }, // Add this line
 ];
 
 const Navbar: React.FC = () => {
