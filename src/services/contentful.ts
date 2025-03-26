@@ -15,7 +15,7 @@ export const getBlogPosts = async () => {
   try {
     const response = await client.getEntries({
       content_type: 'blogPost',
-      order: '-sys.createdAt',
+      order: ['-sys.createdAt'],
     });
     console.log('Fetched blog posts:', response.items); // Log the fetched data
     return response.items;

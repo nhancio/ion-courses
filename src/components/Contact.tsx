@@ -36,10 +36,10 @@ const Contact: React.FC = () => {
       };
 
       const result = await emailjs.send(
-        import.meta.env.EMAILJS_SERVICE_ID, // Use environment variable
-        import.meta.env.EMAILJS_TEMPLATE_ID, // Use environment variable
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Use environment variable
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Use environment variable
         templateParams,
-        import.meta.env.EMAILJS_PUBLIC_KEY // Use environment variable
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Use environment variable
       );
 
       if (result.text === 'OK') {
